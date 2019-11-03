@@ -2,11 +2,8 @@
 #include <stdarg.h>
 #include <math.h>
 #define GL_GLEXT_PROTOTYPES
-#ifdef __APPLE__
-#include <GLUT/glut.h>
-#else
 #include <GL/glut.h>
-#endif
+
 
 // ----------------------------------------------------------
 // Function Prototypes
@@ -17,8 +14,8 @@ void specialKeys();
 // ----------------------------------------------------------
 // Global Variables
 // ----------------------------------------------------------
-double rotate_y=0; 
-double rotate_x=0;
+double rotate_y = 0.0; 
+double rotate_x = 0.0;
 double scale = 2.5;
 double translate = 0.0;
 
@@ -40,7 +37,7 @@ void display(){
   glRotatef( rotate_y, 0.0, 1.0, 0.0 );
 
   // Scaling
-  glScaled( 0.0, scale, 0.0 );       
+  glScaled( scale, scale, 0.0 );       
 
   //Line
   glLineWidth(2.5);
@@ -61,17 +58,17 @@ void specialKeys( int key, int x, int y ) {
  
   //  Right arrow - increase rotation by 5 degree
   if (key == GLUT_KEY_RIGHT)
-    rotate_y += 5;
+    rotate_y += 5.0;
  
   //  Left arrow - decrease rotation by 5 degree
   else if (key == GLUT_KEY_LEFT)
-    rotate_y -= 5;
+    rotate_y -= 5.0;
  
   else if (key == GLUT_KEY_UP)
-    rotate_x += 5;
+    rotate_x += 5.0;
  
   else if (key == GLUT_KEY_DOWN)
-    rotate_x -= 5;
+    rotate_x -= 5.0;
   else if(key == GLUT_KEY_F1){
   	scale += 0.1;
   }
