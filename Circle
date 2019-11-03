@@ -33,10 +33,10 @@ void display (void)
 	// glVertex2i just draws a point on specified co-ordinate 
 	for ( i = 0; i < (2 * pi); i += 0.001) 
 	{ 
-		// let 200 is radius of circle and as, 
-		// circle is defined as x=r*cos(i) and y=r*sin(i) 
-		x = 200 * cos(i); 
-		y = 200 * sin(i); 
+		// radius = 180 
+		// x=r*cos(i) and y=r*sin(i) 
+		x = 180 * cos(i); 
+		y = 180 * sin(i); 
 		
 		glVertex2i(x, y); 
 	} 
@@ -54,7 +54,7 @@ int main (int argc, char** argv)
 	glutInitWindowPosition(0, 0); 
 	
 	// Giving name to window 
-	glutCreateWindow("Circle Drawing"); 
+	glutCreateWindow("CIRCLE"); 
 	myInit(); 
 	
 	glutDisplayFunc(display); 
